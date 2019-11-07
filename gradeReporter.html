@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Grade Reporter</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script src="" async defer></script>
+    <script>
+        //Here are the variables for the program  
+        var PA = "<p />";
+        var absences = parseFloat(prompt('Hello, welcome to the Grade Reporter! How many absences did you have? '));
+        var gradeAvg = parseFloat(prompt('What is your current grade in the class? '));
+
+
+        //This is my if statement to determine if student gets bonus for attendance. If so, they will receive a different summary message
+        if (absences <= 2) {
+            gradeAvg += 3.00;
+            document.write(' You have 3 points added to final grade for so few days missed of class, Great Job!' + PA
+                + ' Your adjusted grade is : ' + gradeAvg + PA);
+        }
+        else { };
+
+        //The following switch statement will determine grade based on user input at prompt and fail student if absences exceed five. 
+        switch (true) {
+            // This will determine if the student is automatic fail for being over 5 absences.
+            case absences > 5:
+                document.write('Sorry. The max allowable absences is 5. You failed class due to absences.');
+                break;
+            // If score is 90 or greater
+            case gradeAvg >= 90:
+                document.write(' You final grade is ' + gradeAvg + ' which calculates to an A. Congratulatiions!');
+                break;
+            // If score is 80 or greater
+            case gradeAvg >= 80:
+                document.write(' You final grade is ' + gradeAvg + ' which calculates to a B. Congratulations!');
+                break;
+            // If score is 70 or greater
+            case gradeAvg >= 70:
+                document.write(' You final grade is ' + gradeAvg + ' which calculates to a C. Congratulations!');
+                break;
+            // If score is 60 or greater
+            case gradeAvg >= 60:
+                document.write(' You final grade is ' + gradeAvg + ' which calculates to a D. Congratulations!');
+                break;
+            // Anything 59 or below is failing
+            default:
+                document.write(' Your final grade is ' + gradeAvg + ' which calculates to an F. ');
+        }
+    </script>
+</body>
+
+</html>
